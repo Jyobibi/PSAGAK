@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>프사각</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    
+    <header>
+        <h1> PSAGAK </h1>
+        <p> 이 사진 완전 프사각이다! </p>
+    </header>
+
+    <main>
+        <!-- 좌측 프로필 업로드 하고 편집하는 영역 -->
+        <section class="editor">
+            <h2> 프로필 편집 </h2>
+
+            <div class="upload">
+                <label for="photoInput"> 이미지 업로드 </label>
+                <input type="file" id="photoInput" accept="image/*">
+            </div>
+
+            <div class="edit">
+                <img id="photoEdit" src="image/jungwoo.jpeg" alt="프로필 사진">
+            </div>
+            
+            <div class="controls">
+                <label for="photoZoom">확대 - 축소</label>
+                <input type="range" id="photoZoom" min="50" max="150" value="100" step="10">
+            </div>
+
+            <div class="profile">
+                <label for="profileName">이름</label>
+                <input type="text" id="profileName" placeholder="수빈">
+
+                <label for="profileMessage">상태 메시지</label>
+                <input type="text" id="profileMessage" placeholder="정우야 잘생겼어">
+            </div>
+        </section>
+
+        <!-- 우측 편집상황 미리보는 영역 -->
+        <section class="preview">
+            <h2> 실시간 미리보기 </h2>
+
+            <div class="preview-cards">
+                <div class="preview-card">
+                    <h3> 프로필 미리보기 </h3>
+                    <img id="bigPhoto" src="image/jungwoo.jpeg" alt="큰 프로필">
+                    <p id="profileName">프로필 이름</p>
+                </div>
+
+                <div class="preview-card">
+                    <h3> 친구 목록 미리보기 </h3>
+                    <div class="friend">
+                        <img id="friendPhoto" src="image/jungwoo.jpeg" alt="친구 프로필">
+                        <p id="friendName">프로필 이름</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat">
+                <h3> 메신저 대화창 미리보기 </h3>
+
+                <div class="message">
+                    <img id="chatPhoto" src="image/jungwoo.jpeg" alt="대화 프로필">
+                    <p> 종강은 12월 14일이야 </p>
+                </div>
+                <p> 거짓말 치지마 </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <button id="resetBtn"> 초기화 </button>
+    </footer>
 </body>
 </html>
